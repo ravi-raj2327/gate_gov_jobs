@@ -1284,10 +1284,10 @@ body::before {
         <label>Salary Range (LPA)</label>
         <select class="filter-select" id="filterSalary" onchange="applyFilters()">
           <option value="">Any Salary</option>
-          <option value="6-9">₹6–9 LPA</option>
+          <option value="0-9">₹0–9 LPA</option>
           <option value="9-13">₹9–13 LPA</option>
           <option value="13-18">₹13–18 LPA</option>
-          <option value="18+">₹18+ LPA</option>
+          <option value="18-100">₹18+ LPA</option>
         </select>
       </div>
 
@@ -1760,7 +1760,7 @@ const JOBS = [
     bestFor: ["wlb"]
   },
   {
-    id: 20, num: "#20",
+    id: 18, num: "#18",
     title: "HAL Management Trainee (CS/IT)",
     org: "Hindustan Aeronautics Limited",
     sector: "psu", orgType: "psu", grade: "a",
@@ -1781,7 +1781,7 @@ const JOBS = [
     bestFor: ["gate","annual","highsalary"]
   },
   {
-    id: 21, num: "#21",
+    id: 19, num: "#19",
     title: "SEBI Grade A — IT Officer",
     org: "Securities & Exchange Board of India",
     sector: "banking", orgType: "regulatory", grade: "a",
@@ -1802,7 +1802,7 @@ const JOBS = [
     bestFor: ["highsalary","freshers","cyber","annual"]
   },
   {
-    id: 22, num: "#22",
+    id: 20, num: "#20",
     title: "Coal India CS Executive",
     org: "Coal India Limited (Maharatna PSU)",
     sector: "psu", orgType: "psu", grade: "a",
@@ -1823,7 +1823,7 @@ const JOBS = [
     bestFor: ["gate","annual"]
   },
   {
-    id: 23, num: "#23",
+    id: 21, num: "#21",
     title: "IOCL CSE Officer",
     org: "Indian Oil Corporation Limited (Maharatna)",
     sector: "psu", orgType: "psu", grade: "a",
@@ -1844,7 +1844,7 @@ const JOBS = [
     bestFor: ["gate","highsalary","annual"]
   },
   {
-    id: 24, num: "#24",
+    id: 22, num: "#22",
     title: "ONGC CSE Officer",
     org: "Oil & Natural Gas Corporation (Maharatna)",
     sector: "psu", orgType: "psu", grade: "a",
@@ -1865,7 +1865,7 @@ const JOBS = [
     bestFor: ["gate","highsalary","annual"]
   },
   {
-    id: 26, num: "#26",
+    id: 23, num: "#23",
     title: "NIELIT Scientist B",
     org: "National Institute of Electronics & IT",
     sector: "regulatory", orgType: "central", grade: "a",
@@ -1886,7 +1886,7 @@ const JOBS = [
     bestFor: []
   },
   {
-    id: 27, num: "#27",
+    id: 24, num: "#24",
     title: "MeitY Scientist B",
     org: "Ministry of Electronics & Information Technology",
     sector: "regulatory", orgType: "central", grade: "a",
@@ -1907,7 +1907,7 @@ const JOBS = [
     bestFor: ["wlb","research"]
   },
   {
-    id: 29, num: "#29",
+    id: 25, num: "#25",
     title: "CERT-In Scientist B",
     org: "Indian Computer Emergency Response Team (MeitY)",
     sector: "regulatory", orgType: "central", grade: "a",
@@ -1928,7 +1928,7 @@ const JOBS = [
     bestFor: ["cyber","research","freshers"]
   },
   {
-    id: 32, num: "#32",
+    id: 26, num: "#26",
     title: "AAI Junior Executive CS/IT",
     org: "Airports Authority of India",
     sector: "regulatory", orgType: "psu", grade: "a",
@@ -1949,7 +1949,7 @@ const JOBS = [
     bestFor: ["annual","wlb"]
   },
   {
-    id: 33, num: "#33",
+    id: 27, num: "#27",
     title: "SBI Specialist Officer — IT",
     org: "State Bank of India",
     sector: "banking", orgType: "bank", grade: "b",
@@ -1970,7 +1970,7 @@ const JOBS = [
     bestFor: ["annual","highsalary"]
   },
   {
-    id: 34, num: "#34",
+    id: 28, num: "#28",
     title: "PGCIL CS Executive Trainee",
     org: "Power Grid Corporation of India (Maharatna)",
     sector: "psu", orgType: "psu", grade: "a",
@@ -1991,7 +1991,7 @@ const JOBS = [
     bestFor: ["gate","annual"]
   },
   {
-    id: 35, num: "#35",
+    id: 29, num: "#29",
     title: "CBI Technical Assistant",
     org: "Central Bureau of Investigation (MHA)",
     sector: "defence", orgType: "central", grade: "c",
@@ -2012,7 +2012,7 @@ const JOBS = [
     bestFor: ["cyber","defence"]
   },
   {
-    id: 36, num: "#36",
+    id: 30, num: "#30",
     title: "Intelligence Bureau CS Officer",
     org: "Intelligence Bureau (MHA)",
     sector: "defence", orgType: "central", grade: "a",
@@ -2033,7 +2033,7 @@ const JOBS = [
     bestFor: ["defence","cyber","annual"]
   },
   {
-    id: 37, num: "#37",
+    id: 31, num: "#31",
     title: "BIS Scientist B CSE",
     org: "Bureau of Indian Standards",
     sector: "regulatory", orgType: "central", grade: "a",
@@ -2054,7 +2054,7 @@ const JOBS = [
     bestFor: ["annual","wlb"]
   },
   {
-    id: 38, num: "#38",
+    id: 32, num: "#32",
     title: "BEL CS Engineer",
     org: "Bharat Electronics Limited (Navratna PSU)",
     sector: "psu", orgType: "psu", grade: "a",
@@ -2075,7 +2075,7 @@ const JOBS = [
     bestFor: ["gate","defence","annual"]
   },
   {
-    id: 39, num: "#39",
+    id: 33, num: "#33",
     title: "SAIL CS Engineer",
     org: "Steel Authority of India Limited (Maharatna)",
     sector: "psu", orgType: "psu", grade: "a",
@@ -2096,7 +2096,7 @@ const JOBS = [
     bestFor: ["gate","annual","highsalary"]
   },
   {
-    id: 41, num: "#41",
+    id: 34, num: "#34",
     title: "IBPS SO IT Officer (Scale I)",
     org: "Institute of Banking Personnel Selection",
     sector: "banking", orgType: "bank", grade: "b",
@@ -2117,7 +2117,7 @@ const JOBS = [
     bestFor: ["annual","banking"]
   },
   {
-    id: 42, num: "#42",
+    id: 35, num: "#35",
     title: "IBPS RRB IT Officer Scale I",
     org: "IBPS — Regional Rural Banks",
     sector: "banking", orgType: "bank", grade: "b",
@@ -2138,7 +2138,7 @@ const JOBS = [
     bestFor: ["annual"]
   },
   {
-    id: 43, num: "#43",
+    id: 36, num: "#36",
     title: "IBPS RRB Scale II IT Officer",
     org: "IBPS — Regional Rural Banks",
     sector: "banking", orgType: "bank", grade: "a",
@@ -2159,7 +2159,7 @@ const JOBS = [
     bestFor: ["annual"]
   },
   {
-    id: 44, num: "#44",
+    id: 37, num: "#37",
     title: "NIACL Administrative Officer (CS)",
     org: "The New India Assurance Co. Ltd.",
     sector: "banking", orgType: "bank", grade: "b",
@@ -2180,7 +2180,7 @@ const JOBS = [
     bestFor: ["annual","wlb"]
   },
   {
-    id: 45, num: "#45",
+    id: 38, num: "#38",
     title: "SSC Executive IT (Indian Navy)",
     org: "Staff Selection Commission / Indian Navy",
     sector: "defence", orgType: "central", grade: "a",
@@ -2201,7 +2201,7 @@ const JOBS = [
     bestFor: ["defence","highsalary"]
   },
   {
-    id: 46, num: "#46",
+    id: 39, num: "#39",
     title: "SPMCIL Assistant Manager IT",
     org: "Security Printing & Minting Corporation of India",
     sector: "psu", orgType: "psu", grade: "a",
@@ -2222,7 +2222,7 @@ const JOBS = [
     bestFor: ["cyber"]
   },
   {
-    id: 47, num: "#47",
+    id: 40, num: "#40",
     title: "PFRDA CS/IT Officer",
     org: "Pension Fund Regulatory & Development Authority",
     sector: "regulatory", orgType: "regulatory", grade: "a",
@@ -2243,7 +2243,7 @@ const JOBS = [
     bestFor: ["wlb","regulatory"]
   },
   {
-    id: 48, num: "#48",
+    id: 41, num: "#41",
     title: "NABARD IT Officer",
     org: "National Bank for Agriculture & Rural Development",
     sector: "banking", orgType: "bank", grade: "b",
@@ -2264,7 +2264,7 @@ const JOBS = [
     bestFor: ["annual","wlb"]
   },
   {
-    id: 49, num: "#49",
+    id: 42, num: "#42",
     title: "RRB Junior Engineer IT",
     org: "Indian Railways (via RRB)",
     sector: "regulatory", orgType: "central", grade: "b",
@@ -2285,7 +2285,7 @@ const JOBS = [
     bestFor: ["annual","wlb"]
   },
   {
-    id: 50, num: "#50",
+    id: 43, num: "#43",
     title: "NLC India CS Engineer",
     org: "NLC India Limited (Navratna PSU)",
     sector: "psu", orgType: "psu", grade: "a",
@@ -2306,7 +2306,7 @@ const JOBS = [
     bestFor: ["gate","annual"]
   },
   {
-    id: 52, num: "#52",
+    id: 44, num: "#44",
     title: "NPCIL Scientific Officer CS",
     org: "Nuclear Power Corporation of India",
     sector: "psu", orgType: "psu", grade: "a",
@@ -2327,7 +2327,7 @@ const JOBS = [
     bestFor: ["annual","highsalary"]
   },
   {
-    id: 53, num: "#53",
+    id: 45, num: "#45",
     title: "NMDC CS Engineer",
     org: "National Mineral Development Corporation (Navratna)",
     sector: "psu", orgType: "psu", grade: "a",
@@ -2348,7 +2348,7 @@ const JOBS = [
     bestFor: ["gate","annual"]
   },
   {
-    id: 54, num: "#54",
+    id: 46, num: "#46",
     title: "UGC NET CS — Lectureship/JRF",
     org: "National Testing Agency (UGC)",
     sector: "teaching", orgType: "central", grade: "a",
@@ -2369,7 +2369,7 @@ const JOBS = [
     bestFor: ["wlb","teaching","annual"]
   },
   {
-    id: 55, num: "New",
+    id: 47, num: "#47",
     title: "GAIL CS Executive Trainee",
     org: "GAIL India Ltd (Maharatna PSU)",
     sector: "psu", orgType: "psu", grade: "a",
@@ -2390,7 +2390,7 @@ const JOBS = [
     bestFor: ["gate","highsalary","annual"]
   },
   {
-    id: 56, num: "New",
+    id: 48, num: "#48",
     title: "NTPC Executive Trainee CS",
     org: "NTPC Limited (Maharatna PSU)",
     sector: "psu", orgType: "psu", grade: "a",
@@ -2411,7 +2411,7 @@ const JOBS = [
     bestFor: ["gate","highsalary","annual"]
   },
   {
-    id: 57, num: "New",
+    id: 49, num: "#49",
     title: "RBI Grade B IT Specialist",
     org: "Reserve Bank of India",
     sector: "banking", orgType: "regulatory", grade: "a",
@@ -2432,7 +2432,7 @@ const JOBS = [
     bestFor: ["highsalary","annual","cyber","freshers"]
   },
   {
-    id: 58, num: "New",
+    id: 50, num: "#50",
     title: "IRDAI Assistant Manager IT",
     org: "Insurance Regulatory & Development Authority of India",
     sector: "regulatory", orgType: "regulatory", grade: "a",
@@ -2453,7 +2453,7 @@ const JOBS = [
     bestFor: ["annual","highsalary"]
   },
   {
-    id: 59, num: "New",
+    id: 51, num: "#51",
     title: "IFSCA Grade A IT Officer",
     org: "International Financial Services Centres Authority (GIFT City)",
     sector: "regulatory", orgType: "regulatory", grade: "a",
@@ -2606,9 +2606,12 @@ function applyFilters() {
       if (grade === 'c' && job.grade !== 'c') return false;
     }
     if (salary) {
-      const [min, max] = salary.replace('+','').split('-').map(Number);
-      if (salary.endsWith('+')) { if (job.ctcMax < 18) return false; }
-      else { if (job.ctcMax < min || job.ctcMin > max) return false; }
+      const [min, max] = salary.split('-').map(Number);
+      if (salary === '18-100') {
+        if (job.ctcMax < 18) return false;
+      } else {
+        if (job.ctcMax < min || job.ctcMin > max) return false;
+      }
     }
     if (freq && job.frequency !== freq) return false;
     if (pct && job.pctRequired < Number(pct)) return false;
@@ -2680,13 +2683,13 @@ function resetFilters() {
 // QUICK FILTERS
 function applyQuick(type) {
   resetFilters();
-  if (type === 'gate') filteredJobs = JOBS.filter(j => j.bestFor.includes('gate'));
+  if (type === 'gate') filteredJobs = JOBS.filter(j => j.bestFor && j.bestFor.includes('gate'));
   else if (type === 'highsalary') { document.getElementById('filterSalary').value = '13-18'; applyFilters(); return; }
   else if (type === 'annual') { document.getElementById('filterFreq').value = 'annual'; applyFilters(); return; }
   else if (type === 'research') { document.getElementById('filterSector').value = 'research'; applyFilters(); return; }
-  else if (type === 'freshers') filteredJobs = JOBS.filter(j => j.bestFor.includes('freshers'));
-  else if (type === 'wlb') filteredJobs = JOBS.filter(j => j.bestFor.includes('wlb'));
-  else if (type === 'cyber') filteredJobs = JOBS.filter(j => j.bestFor.includes('cyber'));
+  else if (type === 'freshers') filteredJobs = JOBS.filter(j => j.bestFor && j.bestFor.includes('freshers'));
+  else if (type === 'wlb') filteredJobs = JOBS.filter(j => j.bestFor && j.bestFor.includes('wlb'));
+  else if (type === 'cyber') filteredJobs = JOBS.filter(j => j.bestFor && j.bestFor.includes('cyber'));
   updateResultCount();
   renderCards();
   document.getElementById('activeFilters').innerHTML = '';
@@ -2771,35 +2774,13 @@ function openModal(id) {
       </div>
       <div style="font-size:11px;color:var(--text3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px;font-weight:600;">Age Limits by Category</div>
       <table class="age-table">
-        <tr>
-          <th>Category</th><th>Max Age</th><th>Relaxation</th>
-        </tr>
-        <tr>
-          <td class="caste-gen">⬜ General</td>
-          <td>${job.eligibility.age.gen} years</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td class="caste-obc">🟣 OBC (Non-Creamy Layer)</td>
-          <td>${job.eligibility.age.obc} years</td>
-          <td>+${job.eligibility.age.obc - job.eligibility.age.gen} years</td>
-        </tr>
-        <tr>
-          <td class="caste-sc">🔵 SC</td>
-          <td>${job.eligibility.age.sc} years</td>
-          <td>+${job.eligibility.age.sc - job.eligibility.age.gen} years</td>
-        </tr>
-        <tr>
-          <td class="caste-st">🟡 ST</td>
-          <td>${job.eligibility.age.st} years</td>
-          <td>+${job.eligibility.age.st - job.eligibility.age.gen} years</td>
-        </tr>
-        <tr>
-          <td class="caste-pwd">♿ PwD</td>
-          <td>${job.eligibility.age.pwd} years</td>
-          <td>+${job.eligibility.age.pwd - job.eligibility.age.gen} years</td>
-        </tr>
-      </table>
+        <tr><th>Category</th><th>Max Age</th><th>Relaxation</th></tr>
+        <tr><td class="caste-gen">⬜ General</td><td>${job.eligibility.age.gen} years</td><td>—</td></tr>
+        <tr><td class="caste-obc">🟣 OBC (Non-Creamy Layer)</td><td>${job.eligibility.age.obc} years</td><td>+${job.eligibility.age.obc - job.eligibility.age.gen} years</td></tr>
+        <tr><td class="caste-sc">🔵 SC</td><td>${job.eligibility.age.sc} years</td><td>+${job.eligibility.age.sc - job.eligibility.age.gen} years</td></tr>
+        <tr><td class="caste-st">🟡 ST</td><td>${job.eligibility.age.st} years</td><td>+${job.eligibility.age.st - job.eligibility.age.gen} years</td></tr>
+        <tr><td class="caste-pwd">♿ PwD</td><td>${job.eligibility.age.pwd} years</td><td>+${job.eligibility.age.pwd - job.eligibility.age.gen} years</td></tr>
+       </table>
       <div style="font-size:11px;color:var(--text3);margin-top:8px;">* Age limits are approximate. Always verify from official notification. Ex-serviceman, J&K domicile, and other special relaxations may apply additionally.</div>
     </div>
 
@@ -2908,16 +2889,8 @@ function openCompare() {
   document.getElementById('compareBody').innerHTML = `
     <div class="compare-table-wrap">
       <table class="compare-table">
-        <tr>
-          <th style="min-width:140px;">Parameter</th>
-          ${jobs.map(j=>`<th style="color:var(--gold);">${j.title}</th>`).join('')}
-        </tr>
-        ${rows.map(r=>`
-          <tr>
-            <td class="row-label">${r.label}</td>
-            ${jobs.map(j=>`<td>${r.key(j)}</td>`).join('')}
-          </tr>
-        `).join('')}
+        <tr><th style="min-width:140px;">Parameter</th>${jobs.map(j=>`<th style="color:var(--gold);">${j.title}</th>`).join('')}</tr>
+        ${rows.map(r=>`<tr><td class="row-label">${r.label}</td>${jobs.map(j=>`<td>${r.key(j)}</td>`).join('')}</tr>`).join('')}
       </table>
     </div>
   `;
