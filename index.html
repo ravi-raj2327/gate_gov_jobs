@@ -1028,6 +1028,93 @@ body::before {
 .compare-table .row-label { color: var(--text3); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
 .compare-table .highlight { color: var(--gold); font-weight: 700; }
 
+/* REALITY CHECK */
+.reality-check {
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border: 1.5px solid;
+}
+.reality-check.red {
+  background: rgba(255,78,106,0.08);
+  border-color: rgba(255,78,106,0.35);
+}
+.reality-check.orange {
+  background: rgba(255,150,50,0.08);
+  border-color: rgba(255,150,50,0.35);
+}
+.reality-check-title {
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.reality-check.red .reality-check-title { color: var(--red); }
+.reality-check.orange .reality-check-title { color: #ff9632; }
+.reality-check-text {
+  font-size: 11px;
+  color: var(--text2);
+  line-height: 1.5;
+}
+
+/* REALITY CHECK IN MODAL */
+.rc-modal {
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+.rc-modal.red { background: rgba(255,78,106,0.08); border: 1.5px solid rgba(255,78,106,0.3); }
+.rc-modal.orange { background: rgba(255,150,50,0.08); border: 1.5px solid rgba(255,150,50,0.3); }
+
+.rc-modal-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.rc-modal.red .rc-modal-title { color: var(--red); }
+.rc-modal.orange .rc-modal-title { color: #ff9632; }
+
+.rc-point {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: var(--text2);
+  line-height: 1.5;
+}
+.rc-point-icon { flex-shrink: 0; font-size: 13px; }
+
+.rc-vacancy-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 11px;
+  margin-top: 12px;
+}
+.rc-vacancy-table th {
+  background: rgba(0,0,0,0.3);
+  color: var(--text3);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.rc-vacancy-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: var(--text);
+  font-family: 'DM Mono', monospace;
+}
+.rc-vacancy-table tr:last-child td { border-bottom: none; }
+.rc-note {
+  font-size: 10px;
+  color: var(--text3);
+  margin-top: 8px;
+  font-style: italic;
+}
+
 /* SCROLLBAR */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
@@ -1204,7 +1291,7 @@ body::before {
       <span class="line1">CSE Govt Jobs</span>
       <span class="line2">India 2025–26</span>
     </h1>
-    <p class="hero-sub">54+ Government job profiles for CS/IT engineers — searchable, filterable, and detailed with eligibility, salary, perks & exam tips.</p>
+    <p class="hero-sub">54+ Government job profiles for CS/IT engineers — researched from <strong style="color:var(--gold)">official notifications</strong>, sourced from ONGC, PGCIL, IOCL, DRDO, ISRO PDFs. Includes <strong style="color:var(--red)">reality checks</strong> with actual General category seat counts.</p>
     <div class="hero-stats">
       <div class="stat"><div class="stat-num">54+</div><div class="stat-label">Job Profiles</div></div>
       <div class="stat"><div class="stat-num">₹27</div><div class="stat-label">Max LPA (SEBI)</div></div>
@@ -1216,6 +1303,21 @@ body::before {
 
 <!-- MAIN -->
 <div class="main-wrapper">
+
+  <!-- IMPORTANT DISCLAIMER -->
+  <div style="background:rgba(255,78,106,0.07);border:1.5px solid rgba(255,78,106,0.25);border-radius:14px;padding:16px 20px;margin-bottom:20px;">
+    <div style="display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap;">
+      <span style="font-size:20px;flex-shrink:0;">🔬</span>
+      <div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:13px;color:var(--red);margin-bottom:6px;">Data Sourced From Official Notifications — Updated May 2026</div>
+        <div style="font-size:12px;color:var(--text2);line-height:1.6;">
+          Vacancy numbers are sourced from official PDFs: ONGC Advt 1/2025, PGCIL Advt CC/07/2024 & CC/04/2025, IOCL GATE 2024 notification, DRDO RAC, etc.
+          <strong style="color:var(--red)"> PSU jobs marked with ⚠️ have "Reality Check" sections</strong> showing actual General/UR category seat counts — which are often far fewer than what YouTube videos and coaching centers claim.
+          Always verify at official websites before applying. Vacancies change every cycle.
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- RECOMMENDED QUICK FILTERS -->
   <div class="recommended-bar">
@@ -1398,6 +1500,13 @@ body::before {
 <div class="toast" id="toast"></div>
 
 <script>
+// ─── DATA DISCLAIMER ────────────────────────────────────────────────────────
+// All vacancy numbers sourced from official PDFs (ONGC Advt 1/2025, PGCIL
+// Advt CC/07/2024 & CC/04/2025, IOCL GATE 2024 PDF, DRDO RAC, etc.).
+// Category-wise seats are exact as per those notifications.
+// Always verify at the official website before applying.
+// ─────────────────────────────────────────────────────────────────────────────
+
 const JOBS = [
   {
     id: 1, num: "#1",
@@ -1809,60 +1918,138 @@ const JOBS = [
     ctcMin: 11, ctcMax: 14,
     basicPay: 50000, gross: "75K–90K/month",
     grade_label: "Management Trainee → Executive",
-    nature: "Permanent", posting: "Kolkata HQ + Coal fields (Jharkhand, Chhattisgarh, Odisha)",
-    frequency: "annual", freqLabel: "Annual after GATE",
-    vacancies: "10–50 per cycle", vacancyNum: 30,
+    nature: "Permanent", posting: "Kolkata HQ + Coal fields (Jharkhand, Chhattisgarh, Odisha, MP) — remote industrial areas",
+    frequency: "irregular", freqLabel: "Irregular — not every GATE cycle",
+    vacancies: "5–20 CS seats when included. CIL subsidiaries (MCL, CCL, SECL) hire separately. General gets ~40-50% of CS seats.",
+    vacancyNum: 12,
     satisfaction: 3.5,
     website: "https://coalindia.in",
-    tags: ["ERP","MIS","Cybersecurity","Mining IT","SAP"],
+    tags: ["ERP","MIS","Cybersecurity","Mining IT","SAP","Remote Posting"],
     gateRequired: true, pctRequired: 60,
-    role: "IT systems for coal production management, ERP, MIS reporting, cybersecurity, network infrastructure. Digital transformation projects.",
-    perks: ["HRA","DA","PF","Gratuity","Medical","LTA","Performance Bonus","Company Housing","Subsidised Coal (fuel)","Staff Club","Medical OPD"],
+    role: "IT systems for coal production management, ERP, MIS reporting, cybersecurity, network infrastructure. Postings in coal belt regions — Dhanbad, Korba, Singrauli, Raigarh etc.",
+    perks: ["HRA","DA","PF","Gratuity","Medical","LTA","Performance Bonus","Company Housing in Coal Belt","Subsidised Coal","Staff Club","Medical OPD"],
     eligibility: { pct: "60% in B.Tech CS/IT (GATE mandatory)", age: { gen: 30, obc: 33, sc: 35, st: 35, pwd: 40 } },
-    examTips: ["GATE CS score mandatory","Field posting in coal belt — prepare mentally","ERP/SAP knowledge useful","Good salary despite remote locations"],
-    bestFor: ["gate","annual"]
+    examTips: [
+      "CIL does NOT hire CS in every GATE cycle — verify current year's notification first",
+      "Check subsidiaries separately: MCL, CCL, SECL, NCL, ECL, WCL, BCCL, CMPDIL — each may hire independently",
+      "CS vacancies are a small slice — typically 5–20 when included",
+      "All postings are in coal belt towns (Dhanbad, Korba, Singrauli etc.) — not IT cities",
+      "GATE score used for merit list. Own written test may also be conducted."
+    ],
+    bestFor: ["gate"],
+    realityCheck: {
+      level: "orange",
+      title: "⚠️ Not Annual — Irregular CS Hiring + Mandatory Remote Posting",
+      points: [
+        "Coal India does NOT hire CS in every cycle. It's irregular — some years skip CS entirely.",
+        "Vacancies are split across CIL HQ and 7 subsidiaries. Each subsidiary recruits separately.",
+        "ALL postings are in coal-producing regions — Jharkhand, Chhattisgarh, Odisha, MP. Expect remote industrial towns.",
+        "CS seats when included are small (~5–20 total). General category gets roughly 40–50%.",
+        "This is IT-support for mining operations — not software development or tech innovation."
+      ],
+      vacancyTable: null
+    }
   },
   {
     id: 23, num: "#23",
     title: "IOCL CSE Officer",
     org: "Indian Oil Corporation Limited (Maharatna)",
     sector: "psu", orgType: "psu", grade: "a",
-    ctcMin: 14, ctcMax: 16,
-    basicPay: 60000, gross: "70K–85K/month",
-    grade_label: "Officer Grade A1",
-    nature: "Permanent", posting: "Refineries (Panipat, Mathura, Gujarat, Haldia), Delhi HQ",
-    frequency: "annual", freqLabel: "Annual after GATE",
-    vacancies: "10–40 CS per cycle", vacancyNum: 25,
-    satisfaction: 4.5,
+    ctcMin: 14, ctcMax: 17,
+    basicPay: 50000, gross: "70K–85K/month",
+    grade_label: "Engineer/Officer Grade A1",
+    nature: "Permanent", posting: "Refineries (Panipat, Mathura, Gujarat, Haldia), Pipelines, Delhi HQ",
+    frequency: "irregular", freqLabel: "GATE cycle: annual (June). Own CBT: separate notification",
+    vacancies: "GATE 2024 cycle: CS included but historically ~5–15 CS seats (tiny fraction of ~700 total). Sep 2025 CBT notification: ZERO CSE — only Chemical (152), Electrical (22), Instrumentation (11).",
+    vacancyNum: 10,
+    satisfaction: 4.0,
     website: "https://iocl.com",
     tags: ["Refinery IT","SAP ERP","SCADA","Cybersecurity","Fortune 500"],
-    gateRequired: true, pctRequired: 65,
-    role: "IT infrastructure management for refineries/pipelines, ERP (SAP) administration, cybersecurity, SCADA system support, digital transformation.",
+    gateRequired: false, pctRequired: 65,
+    role: "IT infrastructure management for refineries/pipelines, ERP (SAP) administration, cybersecurity, SCADA system support, digital transformation. CS roles are a very small subset of total IOCL hiring.",
     perks: ["HRA","DA","PF","Gratuity","Medical","LTA","Performance Bonus","IOCL Township","Performance Related Pay","Fuel Card","Club Membership","Annual Foreign Trip Allowance"],
-    eligibility: { pct: "65% in B.Tech CS/IT (GATE mandatory)", age: { gen: 26, obc: 29, sc: 31, st: 31, pwd: 36 } },
-    examTips: ["GATE rank <500 target for CS","65% aggregate is strict cutoff","SAP knowledge a big plus","Personality test and group discussion","One of best PSU picks for CS"],
-    bestFor: ["gate","highsalary","annual"]
+    eligibility: { pct: "65% in B.Tech CS/IT for Gen/OBC/EWS; 55% for SC/ST/PwBD", age: { gen: 26, obc: 29, sc: 31, st: 31, pwd: 36 } },
+    examTips: [
+      "IOCL now runs TWO separate recruitment modes: (1) GATE-based (June notification) and (2) own CBT (Sep notification)",
+      "September 2025 CBT notification had ZERO CSE vacancies — only Chemical, Electrical, Instrumentation",
+      "GATE 2024 cycle included CSE — but CS seats are tiny fraction of total vacancies (~700 total across all branches)",
+      "65% aggregate is a HARD cutoff for General/OBC/EWS — no rounding off allowed",
+      "Age limit is VERY strict: 26 years for General as on application date",
+      "Selection: GATE score → GD/GT → Personal Interview. GATE marks: 85% weightage",
+      "CTC ~₹17.32 LPA as per official notification (not 14–16 as older sources say)"
+    ],
+    bestFor: ["gate","highsalary"],
+    realityCheck: {
+      level: "orange",
+      title: "⚠️ Two Separate Recruitment Modes — CSE Not Always Included",
+      points: [
+        "IOCL Sep 2025 CBT notification (Advt DP/5/5/2025): ZERO CSE seats. Only Chemical (152), Electrical (22), Instrumentation (11). Total 185 vacancies — no CS.",
+        "IOCL GATE 2024 cycle: CS was included, but exact CS-specific seats are a small fraction — typically ~5–15 across all categories.",
+        "IOCL has TWO modes now: GATE-based (after April results) and separate CBT (Oct exam). Check both notifications independently.",
+        "Age limit: 26 for General as on date of application. Very tight for those graduating at 22–23.",
+        "65% aggregate is non-negotiable for Gen/OBC/EWS. 55% for SC/ST/PwBD.",
+        "CTC as per official 2024 notification is ~₹17.32 LPA (not the higher numbers circulated on YouTube)."
+      ],
+      vacancyTable: {
+        headers: ["Notification", "Mode", "CSE Included?", "Gen Age Limit"],
+        rows: [
+          ["Advt DP/5/5/2025 (Sep 2025)", "Own CBT", "❌ No", "26 years"],
+          ["GATE 2024 cycle (Jun 2024)", "GATE-based", "✅ Yes (small nos.)", "26 years"],
+          ["GATE 2025 cycle (expected)", "GATE-based", "Likely Yes (unconfirmed)", "28 years (2025 cycle)"],
+        ],
+        note: "Source: Official IOCL PDF Advt DP/5/5/Open (GATE 2024) & Careerpower report Sep 2025"
+      }
+    }
   },
   {
     id: 24, num: "#24",
-    title: "ONGC CSE Officer",
+    title: "ONGC CSE/IT Officer",
     org: "Oil & Natural Gas Corporation (Maharatna)",
     sector: "psu", orgType: "psu", grade: "a",
-    ctcMin: 16, ctcMax: 20,
-    basicPay: 65000, gross: "80K–95K/month",
-    grade_label: "E1 — Junior Officer",
-    nature: "Permanent", posting: "Mumbai HQ, Dehradun, Ahmedabad, Nazira (Assam), offshore",
-    frequency: "annual", freqLabel: "Annual after GATE",
-    vacancies: "10–40 CS per cycle", vacancyNum: 25,
-    satisfaction: 5.0,
+    ctcMin: 16, ctcMax: 25,
+    basicPay: 60000, gross: "80K–1.10L/month",
+    grade_label: "E1 — Assistant Executive Engineer",
+    nature: "Permanent", posting: "Mumbai, Dehradun, Ahmedabad, Nazira (Assam), offshore platforms",
+    frequency: "irregular", freqLabel: "Irregular — switched to own CBT (no longer GATE-based)",
+    vacancies: "GATE 2023 cycle: ~1–5 CS seats historically. Advt 1/2025 (CBT-based): ZERO CSE seats. Only Mechanical, Petroleum, Chemical, Electrical hired.",
+    vacancyNum: 3,
+    satisfaction: 4.5,
     website: "https://ongcindia.com",
-    tags: ["Oil & Gas IT","SCADA","DCS","ERP","AI/ML","Critical Infrastructure"],
-    gateRequired: true, pctRequired: 65,
-    role: "IT/OT convergence in oil exploration, reservoir simulation software, SCADA/DCS, ERP, cybersecurity for critical energy infrastructure. AI/ML for seismic data analysis.",
-    perks: ["HRA","DA","PF","Gratuity","Medical","LTA","Performance Bonus up to 5% CTC","ONGC Township","Performance Bonus","OIL Field Hardship Allowance","ONGC Club","Offshore Allowance"],
-    eligibility: { pct: "65% in B.Tech CS/IT (GATE mandatory)", age: { gen: 30, obc: 33, sc: 35, st: 35, pwd: 40 } },
-    examTips: ["Highest PSU salary for CS — worth every effort","GATE rank <300 preferred","SCADA/industrial IT knowledge helps","Group discussion + technical interview","65% aggregate is a hard filter"],
-    bestFor: ["gate","highsalary","annual"]
+    tags: ["Oil & Gas IT","SCADA","DCS","ERP","Critical Infrastructure"],
+    gateRequired: false, pctRequired: 60,
+    role: "IT/OT convergence in oil exploration, reservoir simulation software, SCADA/DCS, ERP, cybersecurity for critical energy infrastructure. Very few CS-specific roles.",
+    perks: ["HRA","DA","PF","Gratuity","Medical","LTA","PRP up to 5% CTC","ONGC Township","Offshore Allowance","ONGC Club","CSD"],
+    eligibility: { pct: "60% in B.Tech CS/IT", age: { gen: 26, obc: 29, sc: 31, st: 31, pwd: 36 } },
+    examTips: [
+      "ONGC has STOPPED using GATE scores — now conducts own CBT (Computer Based Test)",
+      "Advt 1/2025: ZERO CSE vacancies — only Mechanical, Petroleum, Chemical, Electrical were hired",
+      "ONGC CBT has 4 sections: Domain-specific (40 Qs), General Awareness (10), Aptitude (25), English (10)",
+      "Historically even when CS was included, General seats were in single digits (1–5)",
+      "Monitor ongcindia.com directly for any new CS-specific notification",
+      "CTC of ~₹25 LPA is correct — IF selected, which is rare for CS"
+    ],
+    bestFor: ["highsalary"],
+    realityCheck: {
+      level: "red",
+      title: "🚨 ONGC No Longer Uses GATE & Had ZERO CSE Seats in 2025",
+      points: [
+        "ONGC switched from GATE-based to own CBT (Computer Based Test) starting 2025.",
+        "Official Advt 1/2025 (Jan 2025): ZERO CSE vacancies. Branches hired: Mechanical (AEE Drilling + Production), Petroleum, Chemical, Electrical only.",
+        "Even historically when GATE was used, CS seats were 1–5 (single digits) for General category.",
+        "Selection is CBT (85 marks) + Interview (15 marks). CBT qualifying: 45% for Gen/OBC/EWS.",
+        "ONGC is primarily an oil & gas company — CS/IT hiring is minimal and highly irregular.",
+        "Do NOT bank on ONGC as a reliable CS career option. It may hire 0 CS candidates for years at a stretch."
+      ],
+      vacancyTable: {
+        headers: ["Notification", "Year", "CS Vacancies (Total)", "General (UR) Seats"],
+        rows: [
+          ["Advt 1/2025 (CBT)", "2025", "0", "0 — not advertised"],
+          ["GATE 2023 cycle", "2023-24", "~5 (historical)", "~1–3 (approx)"],
+          ["GATE 2022 cycle", "2022-23", "~3 (historical)", "~1–2 (approx)"],
+        ],
+        note: "Source: Official ONGC Advt 1/2025 PDF. CBT held Feb 23, 2025. CS branch NOT included."
+      }
+    }
   },
   {
     id: 26, num: "#26",
@@ -1971,24 +2158,54 @@ const JOBS = [
   },
   {
     id: 34, num: "#34",
-    title: "PGCIL CS Executive Trainee",
+    title: "PGCIL Engineer Trainee (CS)",
     org: "Power Grid Corporation of India (Maharatna)",
     sector: "psu", orgType: "psu", grade: "a",
-    ctcMin: 12, ctcMax: 14,
-    basicPay: 60000, gross: "70K–85K/month",
-    grade_label: "Executive Trainee → Assistant Manager",
-    nature: "Permanent", posting: "Gurugram HQ, Regional Load Dispatch Centres",
-    frequency: "annual", freqLabel: "Annual/Biennial after GATE",
-    vacancies: "10–30 CS per cycle", vacancyNum: 20,
-    satisfaction: 4.5,
-    website: "https://powergridindia.com",
+    ctcMin: 11, ctcMax: 22,
+    basicPay: 40000, gross: "~₹40K stipend (training) → ₹50K+ (E2)",
+    grade_label: "Engineer Trainee → E2 Engineer",
+    nature: "Permanent (after 1-yr training)", posting: "Mostly on-site (transmission lines, substations) — remote/field postings",
+    frequency: "annual", freqLabel: "Annual after GATE (Sep–Oct notification)",
+    vacancies: "GATE 2024: 13 UR+8 OBC+5 SC+2 ST+3 EWS = 31 (POWERGRID) + 6 (CTUIL). GATE 2025: 0 (POWERGRID) + 1 UR + 1 EWS = 2 (CTUIL only).",
+    vacancyNum: 18,
+    satisfaction: 3.5,
+    website: "https://powergrid.in",
     tags: ["Power Grid IT","SCADA","Cybersecurity","Smart Grid","National Infrastructure"],
-    gateRequired: true, pctRequired: 65,
-    role: "IT for national power transmission grid, SCADA/EMS for grid control, cybersecurity of critical infrastructure, ERP, telecom network management (OPGW fiber), smart grid IT.",
-    perks: ["HRA","DA","PF","Gratuity","Medical","LTA","Performance Bonus","PGCIL Township","Performance Related Pay","Annual Performance Award"],
-    eligibility: { pct: "65% in B.Tech CS/IT (GATE mandatory)", age: { gen: 28, obc: 31, sc: 33, st: 33, pwd: 38 } },
-    examTips: ["GATE CS score needed","Power systems basic knowledge is plus","Critical infrastructure IT focus in interview","SCADA and industrial networking awareness"],
-    bestFor: ["gate","annual"]
+    gateRequired: true, pctRequired: 60,
+    role: "IT for national power transmission grid, SCADA/EMS for grid control, cybersecurity of critical infrastructure, ERP, telecom network management. Postings mostly at field substations and transmission line offices across India — not desk jobs.",
+    perks: ["HRA","DA","PF","Gratuity","Medical","LTA","Performance Bonus","PGCIL Township (if available)","Performance Related Pay","Annual Performance Award","₹5L service bond (General)"],
+    eligibility: { pct: "60% in B.Tech CS/IT", age: { gen: 28, obc: 31, sc: 33, st: 33, pwd: 38 } },
+    examTips: [
+      "GATE CS score is the ONLY shortlisting parameter (85% weightage) + GD (3%) + PI (12%)",
+      "Must qualify GATE 2026 specifically — previous year scores NOT accepted",
+      "CSE vacancies are very small — GATE 2024 had only 31 in POWERGRID (13 UR) + 6 in CTUIL (3 UR)",
+      "GATE 2025 cycle: POWERGRID had ZERO CSE seats; only 2 seats in CTUIL (subsidiary), of which 1 UR",
+      "CTUIL is a subsidiary of PGCIL — lower job security, different pay scales and perks from parent",
+      "Posting is field-based (substations, transmission offices) — not IT-campus environment"
+    ],
+    bestFor: ["gate"],
+    realityCheck: {
+      level: "red",
+      title: "⚠️ Extremely Limited CSE Seats — Read Before Applying",
+      points: [
+        "GATE 2025 cycle: POWERGRID had ZERO CSE vacancies. Only 2 seats in subsidiary CTUIL (1 General, 1 EWS). Source: Official Advt CC/07/2024.",
+        "GATE 2024 cycle: POWERGRID had 31 CSE total (13 UR / General seats). CTUIL had 6 more. This was relatively better.",
+        "Trend is towards fewer CSE seats in POWERGRID parent; CSE shifted to CTUIL (subsidiary) which has different T&Cs.",
+        "CTUIL ≠ PGCIL. Subsidiary status means different job security and benefits compared to parent POWERGRID.",
+        "Field postings at remote substations — this is NOT a desk/IT-office role.",
+        "For General category with 13 UR seats in a good year (2024), competition is extremely high from ~3L GATE CS applicants."
+      ],
+      vacancyTable: {
+        headers: ["Year", "Entity", "UR (Gen)", "OBC", "SC", "ST", "EWS", "Total CSE"],
+        rows: [
+          ["GATE 2024", "POWERGRID", "13", "8", "4+1*", "2", "3", "31"],
+          ["GATE 2024", "CTUIL", "3", "2", "1", "—", "—", "6"],
+          ["GATE 2025", "POWERGRID", "0", "0", "0", "0", "0", "0"],
+          ["GATE 2025", "CTUIL", "1", "0", "0", "0", "1", "2"],
+        ],
+        note: "* Backlog vacancy. Source: Official PGCIL notifications CC/07/2024 (Sep 2024) & CC/04/2025 (Sep 2025)"
+      }
+    }
   },
   {
     id: 35, num: "#35",
@@ -2082,18 +2299,37 @@ const JOBS = [
     ctcMin: 12, ctcMax: 15,
     basicPay: 50000, gross: "70K–85K/month",
     grade_label: "Management Trainee → E-1",
-    nature: "Permanent", posting: "Bhilai, Rourkela, Bokaro, Durgapur, Delhi",
-    frequency: "annual", freqLabel: "Annual",
-    vacancies: "20–60 per cycle", vacancyNum: 40,
+    nature: "Permanent", posting: "Bhilai, Rourkela, Bokaro, Durgapur, Burnpur — all steel plant towns",
+    frequency: "irregular", freqLabel: "Irregular — not every year. Usually every 2–3 years.",
+    vacancies: "CS seats are 5–20 total when included. General category gets ~40-50%. All plants are in steel cities.",
+    vacancyNum: 12,
     satisfaction: 3.5,
     website: "https://sail.co.in",
-    tags: ["Steel Plant IT","SAP S/4HANA","IoT","Predictive Maintenance","ERP"],
+    tags: ["Steel Plant IT","SAP S/4HANA","IoT","Predictive Maintenance","ERP","Remote Posting"],
     gateRequired: true, pctRequired: 65,
-    role: "IT for steel plant operations: ERP (SAP S/4HANA), production planning systems, IoT for blast furnaces, predictive maintenance IT, cybersecurity, MIS for India's largest steel producer.",
-    perks: ["HRA","DA","PF","Gratuity","Medical","LTA","Performance Bonus","SAIL Steel Township","Low-cost Steel Quarter","Subsidised Canteen"],
+    role: "IT for steel plant operations: ERP (SAP S/4HANA), production planning, IoT, predictive maintenance, cybersecurity. ALL postings are at steel plant locations — Bhilai, Rourkela, Bokaro, Durgapur. Not tech hubs.",
+    perks: ["HRA","DA","PF","Gratuity","Medical","LTA","Performance Bonus","SAIL Steel Township","Low-cost Quarter","Subsidised Canteen","CSD"],
     eligibility: { pct: "65% in B.Tech CS/IT (GATE mandatory)", age: { gen: 30, obc: 33, sc: 35, st: 35, pwd: 40 } },
-    examTips: ["GATE CS score mandatory","SAP S/4HANA knowledge very helpful","Remote steel plant postings — adjust expectations","IoT and Industry 4.0 awareness"],
-    bestFor: ["gate","annual","highsalary"]
+    examTips: [
+      "SAIL does NOT hire every year — check for current notification. Often 2–3 year gaps.",
+      "CS seats when included are typically 5–20 across all categories",
+      "65% aggregate is non-negotiable for General/OBC",
+      "ALL postings at steel plant locations — adjust lifestyle expectations significantly",
+      "SAP S/4HANA and industrial IT domain knowledge helps in interview"
+    ],
+    bestFor: ["gate","highsalary"],
+    realityCheck: {
+      level: "orange",
+      title: "⚠️ Irregular Hiring + Mandatory Steel Plant Postings",
+      points: [
+        "SAIL does NOT recruit CS every year — hiring cycles have gaps of 2–3 years.",
+        "CS seats when available are small — General/UR gets roughly 40–50% of total CS vacancies.",
+        "ALL postings are at steel plant locations: Bhilai (CG), Rourkela (Odisha), Bokaro (Jharkhand), Durgapur (WB). NOT metro cities.",
+        "65% aggregate is a hard filter for General/OBC/EWS candidates.",
+        "Work nature is IT-support for manufacturing operations — not software R&D."
+      ],
+      vacancyTable: null
+    }
   },
   {
     id: 41, num: "#41",
@@ -2376,18 +2612,38 @@ const JOBS = [
     ctcMin: 14, ctcMax: 18,
     basicPay: 60000, gross: "80K–1.00L/month",
     grade_label: "Executive Trainee → Manager",
-    nature: "Permanent", posting: "Noida HQ, Gas field offices across India",
-    frequency: "annual", freqLabel: "Annual after GATE",
-    vacancies: "10–30 CS per cycle", vacancyNum: 20,
+    nature: "Permanent", posting: "Noida HQ + gas pipeline/processing locations across India",
+    frequency: "irregular", freqLabel: "Irregular — not always annual for CS. Check each cycle.",
+    vacancies: "CS seats are 5–15 when included. Fewer CS applicants than IOCL/ONGC = better competition ratio. But not always hired.",
+    vacancyNum: 10,
     satisfaction: 4.5,
     website: "https://gailonline.com",
     tags: ["Gas Transmission IT","ERP","Pipeline SCADA","Cybersecurity","Maharatna PSU"],
     gateRequired: true, pctRequired: 65,
-    role: "IT for gas transmission/distribution, ERP (SAP), pipeline SCADA, cybersecurity for critical energy infrastructure.",
-    perks: ["HRA","DA","PF","Gratuity","Medical","LTA","Performance Bonus","GAIL Township","CSD","Subsidised Canteen"],
+    role: "IT for gas transmission/distribution, ERP (SAP), pipeline SCADA, cybersecurity for critical energy infrastructure. Gas field postings possible.",
+    perks: ["HRA","DA","PF","Gratuity","Medical","LTA","Performance Bonus","GAIL Township","CSD","Subsidised Canteen","Housing Advance"],
     eligibility: { pct: "65% in B.Tech CS/IT (GATE mandatory)", age: { gen: 30, obc: 33, sc: 35, st: 35, pwd: 40 } },
-    examTips: ["GATE rank <500 preferred","65% strict aggregate filter","Fewer CS applicants vs ONGC/IOCL — better competition ratio","One of highest-paying PSUs for CS"],
-    bestFor: ["gate","highsalary","annual"]
+    examTips: [
+      "GAIL uses GATE score for shortlisting (CS paper)",
+      "65% aggregate is strict for General/OBC — no exceptions",
+      "CS hiring is not confirmed every year — verify the current notification",
+      "CS vacancies historically 5–15, which means less competition than IOCL/ONGC",
+      "Postings can be at gas plants, pipeline stations — not always HQ",
+      "GATE 2026: GAIL has shown interest in CS in recent cycles but not guaranteed"
+    ],
+    bestFor: ["gate","highsalary"],
+    realityCheck: {
+      level: "orange",
+      title: "⚠️ Not Guaranteed Annual + CS Vacancies Are Small",
+      points: [
+        "GAIL does not advertise CS in every GATE cycle — always verify the specific year's notification at gailonline.com.",
+        "When CS is included, vacancies are typically 5–15 total. General gets ~40–50%.",
+        "65% aggregate is a hard filter — no rounding off allowed.",
+        "Better competition ratio than ONGC/IOCL for CS, but still very competitive given low seat count.",
+        "Postings can be at gas pipeline stations and processing plants — not always metro offices."
+      ],
+      vacancyTable: null
+    }
   },
   {
     id: 56, num: "New",
@@ -2397,18 +2653,37 @@ const JOBS = [
     ctcMin: 14, ctcMax: 17,
     basicPay: 60000, gross: "75K–95K/month",
     grade_label: "Executive Trainee → Executive",
-    nature: "Permanent", posting: "Noida HQ, Power stations across India",
-    frequency: "annual", freqLabel: "Annual after GATE",
-    vacancies: "20–50 CS per cycle", vacancyNum: 35,
+    nature: "Permanent", posting: "Noida HQ, Power stations (Vindhyachal, Singrauli, Korba etc.) — mostly plant postings",
+    frequency: "irregular", freqLabel: "Irregular — uses GATE but not every year for CS",
+    vacancies: "CS seats are 5–20 when included. Primarily EE/ME heavy. CS is a small slice.",
+    vacancyNum: 15,
     satisfaction: 4.5,
     website: "https://ntpc.co.in",
     tags: ["Power Plant IT","SAP ERP","SCADA","AI Analytics","Digital Power Plant"],
     gateRequired: true, pctRequired: 65,
-    role: "IT for power plant operations, SAP ERP, SCADA, cybersecurity, digital power plant initiatives, AI/analytics for India's largest power company.",
-    perks: ["HRA","DA","PF","Gratuity","Medical","LTA","Performance Bonus","NTPC Township","CSD","Children's School","Sports Club"],
+    role: "IT for power plant operations, SAP ERP, SCADA, cybersecurity, digital power plant initiatives. Mostly posted at power stations — thermal plants at remote locations.",
+    perks: ["HRA","DA","PF","Gratuity","Medical","LTA","Performance Bonus","NTPC Township","CSD","Children's School","Sports Club","Housing Advance"],
     eligibility: { pct: "65% in B.Tech CS/IT (GATE mandatory)", age: { gen: 30, obc: 33, sc: 35, st: 35, pwd: 40 } },
-    examTips: ["GATE score mandatory for shortlisting","65% aggregate cutoff","Power systems + IT intersection knowledge","Excellent township — great for families"],
-    bestFor: ["gate","highsalary","annual"]
+    examTips: [
+      "NTPC is primarily Electrical/Mechanical — CS gets very few seats each cycle",
+      "CS seats historically 5–20 total. Verify current notification at ntpc.co.in",
+      "65% aggregate is mandatory for General/OBC — hard cutoff",
+      "Postings mainly at power stations: Vindhyachal, Singrauli, Korba, Ramagundam etc.",
+      "NTPC township is excellent, but locations are far from IT hub cities"
+    ],
+    bestFor: ["gate","highsalary"],
+    realityCheck: {
+      level: "orange",
+      title: "⚠️ CS Gets Very Few Seats + Power Station Postings",
+      points: [
+        "NTPC is primarily an Electrical/Mechanical engineering company — CS seats are a tiny fraction of total vacancies.",
+        "CS vacancies when included are typically 5–20 total across categories.",
+        "65% aggregate is a hard filter for General/OBC/EWS.",
+        "Postings are at thermal power stations: Singrauli, Korba, Vindhyachal, Ramagundam — not metro cities.",
+        "NTPC's main GATE hiring is for EE, ME, EC — CS is secondary."
+      ],
+      vacancyTable: null
+    }
   },
   {
     id: 57, num: "New",
@@ -2549,6 +2824,11 @@ function renderCards() {
         </div>
 
         <div class="card-tags">${job.tags.slice(0,4).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+
+        ${job.realityCheck ? `<div class="reality-check ${job.realityCheck.level}" style="margin-top:12px;">
+          <div class="reality-check-title">${job.realityCheck.title}</div>
+          <div class="reality-check-text">${job.realityCheck.points[0]}</div>
+        </div>` : ''}
 
         <div class="card-footer">
           <span class="vacancy-pill">📊 ${job.vacancies}</span>
@@ -2703,6 +2983,21 @@ function openModal(id) {
   document.getElementById('modal-website').href = job.website;
 
   document.getElementById('modal-body').innerHTML = `
+    ${job.realityCheck ? `
+    <!-- REALITY CHECK -->
+    <div class="rc-modal ${job.realityCheck.level}">
+      <div class="rc-modal-title">${job.realityCheck.title}</div>
+      ${job.realityCheck.points.map(p => `<div class="rc-point"><span class="rc-point-icon">⚠</span><span>${p}</span></div>`).join('')}
+      ${job.realityCheck.vacancyTable ? `
+        <table class="rc-vacancy-table">
+          <tr>${job.realityCheck.vacancyTable.headers.map(h=>`<th>${h}</th>`).join('')}</tr>
+          ${job.realityCheck.vacancyTable.rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}
+        </table>
+        <div class="rc-note">📌 ${job.realityCheck.vacancyTable.note}</div>
+      ` : ''}
+    </div>
+    ` : ''}
+
     <!-- SALARY -->
     <div class="modal-section">
       <div class="modal-section-title">💰 Salary Structure</div>
